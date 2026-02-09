@@ -1,95 +1,119 @@
-/**
- * About Us Page Styles
- * Rregullo Tiranen
- */
+/* ============================================
+   ABOUT PAGE — Modern Sections
+   ============================================ */
 
-/* Hero Section */
+/* Hero */
 .about-hero {
-    background-color: var(--color-primary);
+    position: relative;
+    background: var(--gradient-primary);
     color: white;
-    padding: 4rem 0;
+    padding: clamp(3.5rem, 8vw, 5rem) 0;
     text-align: center;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-mesh);
+    opacity: 0.3;
+}
+
+.about-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, var(--color-background), transparent);
 }
 
 .about-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: white;
+    margin-bottom: 0.75rem;
 }
 
 .about-hero .subtitle {
-    font-size: 1.2rem;
-    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    max-width: 600px;
     margin: 0 auto;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* Mission Section */
 .about-mission {
-    padding: 4rem 0;
-    background-color: var(--color-background);
+    padding: var(--spacing-xl) 0;
+    background: var(--color-background);
     scroll-margin-top: 100px;
 }
 
 .mission-content {
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     align-items: center;
     margin-top: 2rem;
 }
 
-.mission-text {
-    flex: 1;
-}
-
 .mission-text p {
     margin-bottom: 1rem;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 .mission-image {
-    flex: 1;
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 4px 12px var(--color-shadow);
+    box-shadow: var(--shadow-xl);
 }
 
 .mission-image img {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform var(--transition-slow);
+}
+
+.mission-image:hover img {
+    transform: scale(1.03);
 }
 
 /* Founders Section */
 .about-founders {
-    padding: 4rem 0;
-    background-color: var(--color-card-bg);
+    padding: var(--spacing-xl) 0;
+    background: var(--color-surface);
     scroll-margin-top: 100px;
 }
 
 .founders-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .founder-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-background);
-    border-radius: 8px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: 0 4px 12px var(--color-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
 }
 
 .founder-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--color-shadow);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
 }
 
 .founder-image {
-    height: 300px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -97,7 +121,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-slow);
 }
 
 .founder-card:hover .founder-image img {
@@ -105,203 +129,289 @@
 }
 
 .founder-info {
-    padding: 1.5rem;
+    padding: 1.75rem;
 }
 
 .founder-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
 }
 
 .founder-title {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    color: var(--color-primary) !important;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
 .founder-bio {
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
 }
 
 .founder-social {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .social-link {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--color-primary);
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1rem;
+    background: var(--gradient-primary);
+    color: white !important;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
 }
 
 .social-link:hover {
-    background-color: rgba(var(--color-primary-rgb), 0.8);
-}
-
-/* Dark theme specific styles for social links */
-:root.dark-theme .social-link,
-:root.dark-theme .footer-contact .social-link,
-:root.dark-theme .contact-info .social-link {
-    color: #000;
-    font-weight: 600;
-    background-color: var(--color-primary);
-}
-
-:root.dark-theme .social-link:hover,
-:root.dark-theme .footer-contact .social-link:hover,
-:root.dark-theme .contact-info .social-link:hover {
-    background-color: rgba(var(--color-primary-rgb), 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
 }
 
 /* Story Section */
 .about-story {
-    padding: 4rem 0;
-    background-color: var(--color-background);
+    padding: var(--spacing-xl) 0;
+    background: var(--color-background);
     scroll-margin-top: 100px;
 }
 
 .story-content {
-    max-width: 800px;
+    max-width: 750px;
     margin: 2rem auto 0;
-    line-height: 1.8;
 }
 
 .story-content p {
     margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
 /* Values Section */
 .about-values {
-    padding: 4rem 0;
-    background-color: var(--color-card-bg);
+    padding: var(--spacing-xl) 0;
+    background: var(--color-surface);
     scroll-margin-top: 100px;
 }
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
 .value-card {
-    background-color: var(--color-background);
-    padding: 2rem;
-    border-radius: 8px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-xl);
     text-align: center;
-    box-shadow: 0 4px 12px var(--color-shadow);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-base);
 }
 
 .value-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.value-card:hover::before {
+    opacity: 1;
 }
 
 .value-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    display: block;
 }
 
 .value-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
 }
 
 .value-card p {
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
 /* Contact Section */
 .about-contact {
-    padding: 4rem 0;
-    background-color: var(--color-background);
+    padding: var(--spacing-xl) 0;
+    background: var(--color-background);
     scroll-margin-top: 100px;
 }
 
-/* Dark theme specific styles for contact form button */
-:root.dark-theme .about-contact .btn-primary {
-    color: #000;
-    font-weight: 600;
-}
-
 .contact-content {
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
     margin-top: 2rem;
-}
-
-.contact-info {
-    flex: 1;
 }
 
 .contact-info p {
     margin-bottom: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.contact-info strong {
+    color: var(--color-text);
 }
 
 .contact-info .social-links {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
 }
 
-.contact-form {
-    flex: 2;
+.contact-form .form-group {
+    margin-bottom: 1.25rem;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
+.contact-form .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
-.form-group input,
-.form-group textarea {
+.contact-form .form-group input,
+.contact-form .form-group textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    background-color: var(--color-background);
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--color-surface);
     color: var(--color-text);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
+    transition: all var(--transition-fast);
     outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
 }
 
-/* Responsive Styles */
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.12);
+}
+
+/* Footer */
+.main-footer .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.main-footer .footer-logo h2 {
+    color: white;
+    font-size: 1.35rem;
+}
+
+.footer-contact h3 {
+    color: white;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact .social-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.footer-contact .social-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: white !important;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+}
+
+.footer-contact .social-link:hover {
+    background: var(--color-primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Dark theme about page */
+.dark-theme .about-founders {
+    background: var(--color-surface);
+}
+
+.dark-theme .founder-card {
+    background: var(--color-background);
+    border-color: var(--color-border);
+}
+
+.dark-theme .about-values {
+    background: var(--color-surface);
+}
+
+.dark-theme .value-card {
+    background: var(--color-background);
+    border-color: var(--color-border);
+}
+
+.dark-theme .social-link {
+    color: white !important;
+}
+
+.dark-theme .contact-form .form-group input,
+.dark-theme .contact-form .form-group textarea {
+    background: var(--color-background);
+    border-color: var(--color-border);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .mission-content,
     .founders-grid,
     .contact-content {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
     .founder-image {
-        height: 250px;
+        height: 220px;
     }
 
     .about-hero {
         padding: 3rem 0;
-    }
-
-    .about-hero h1 {
-        font-size: 2rem;
     }
 
     .about-mission,
@@ -309,7 +419,11 @@
     .about-story,
     .about-values,
     .about-contact {
-        padding: 3rem 0;
+        padding: var(--spacing-large) 0;
+    }
+
+    .main-footer .footer-content {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -319,6 +433,6 @@
     }
 
     .founder-image {
-        height: 200px;
+        height: 180px;
     }
 }

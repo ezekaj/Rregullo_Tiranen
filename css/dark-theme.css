@@ -1,46 +1,73 @@
-/**
- * Dark Theme for Rregullo Tiranen
- * This file contains all dark mode specific styles
- */
+/* ============================================
+   DARK THEME — Premium Dark Mode
+   ============================================ */
 
-/* Dark Theme Variables */
 :root.dark-theme {
-    /* Text colors */
-    --color-text: #f0f0f0;
-    --color-text-secondary: #a0a0a0;
+    /* Text */
+    --color-text: #E8ECF1;
+    --color-text-secondary: #94A3B8;
+    --color-text-muted: #64748B;
 
-    /* Background colors */
-    --color-background: #121212;
-    --color-card-bg: #1e1e1e;
-    --color-header-bg: #1a1a1a;
-    --color-footer-bg: #1a1a1a;
+    /* Backgrounds */
+    --color-background: #0F172A;
+    --color-surface: #1E293B;
+    --color-card-bg: #1E293B;
+    --color-border: #334155;
 
-    /* UI colors */
-    --color-primary: #ff4d6d;
-    --color-primary-rgb: 255, 77, 109;
-    --color-secondary: #7fb3d5;
-    --color-secondary-rgb: 127, 179, 213;
+    /* Header/Footer */
+    --color-header-bg: rgba(15, 23, 42, 0.85);
+    --color-footer-bg: #0B1120;
 
-    /* Status colors */
-    --color-success: #5aad85;
-    --color-success-rgb: 90, 173, 133;
-    --color-progress: #e9c44c;
-    --color-progress-rgb: 233, 196, 76;
-    --color-info: #4eaae4;
-    --color-info-rgb: 78, 170, 228;
-    --color-warning: #f7b44c;
-    --color-warning-rgb: 247, 180, 76;
-    --color-danger: #eb6559;
-    --color-danger-rgb: 235, 101, 89;
+    /* Primary */
+    --color-primary: #FF6B6B;
+    --color-primary-dark: #E63946;
+    --color-primary-light: #FF8A8A;
+    --color-primary-rgb: 255, 107, 107;
 
-    /* Form and UI elements */
-    --color-disabled: #333;
-    --color-disabled-text: #777;
+    /* Accent */
+    --color-accent: #7DD3FC;
+    --color-accent-rgb: 125, 211, 252;
+
+    /* Status */
+    --color-success: #34D399;
+    --color-success-rgb: 52, 211, 153;
+    --color-warning: #FBBF24;
+    --color-warning-rgb: 251, 191, 36;
+    --color-danger: #FB7185;
+    --color-danger-rgb: 251, 113, 133;
+    --color-info: #38BDF8;
+    --color-info-rgb: 56, 189, 248;
+    --color-progress: #FBBF24;
+    --color-progress-rgb: 251, 191, 36;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 25px rgba(255, 107, 107, 0.15);
     --color-shadow: rgba(0, 0, 0, 0.3);
-    --color-border: #333;
+
+    /* Glass */
+    --glass-bg: rgba(30, 41, 59, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-blur: 20px;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #FF6B6B, #E63946);
+    --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+    --gradient-accent: linear-gradient(135deg, #7DD3FC, #38BDF8);
+    --gradient-mesh: radial-gradient(at 20% 80%, rgba(255, 107, 107, 0.08) 0%, transparent 50%),
+                     radial-gradient(at 80% 20%, rgba(125, 211, 252, 0.08) 0%, transparent 50%),
+                     radial-gradient(at 50% 50%, rgba(30, 41, 59, 0.3) 0%, transparent 70%);
+
+    /* Form elements */
+    --color-disabled: #1E293B;
+    --color-disabled-text: #475569;
+    --color-input-bg: #0F172A;
 }
 
-/* Base Elements */
+/* Base overrides */
 .dark-theme body {
     background-color: var(--color-background);
     color: var(--color-text);
@@ -56,26 +83,28 @@
     color: var(--color-text);
 }
 
+.dark-theme p {
+    color: var(--color-text-secondary);
+}
+
 .dark-theme a {
     color: var(--color-primary);
 }
 
-.dark-theme p {
-    color: var(--color-text);
-}
-
 /* Header */
 .dark-theme .main-header {
-    background-color: var(--color-header-bg);
-    box-shadow: 0 2px 8px var(--color-shadow);
+    background: var(--color-header-bg);
+    border-bottom-color: var(--color-border);
 }
 
 .dark-theme .logo h1 {
-    color: var(--color-primary);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .dark-theme .main-nav a {
-    color: var(--color-text);
+    color: var(--color-text-secondary);
 }
 
 .dark-theme .main-nav a:hover,
@@ -83,75 +112,100 @@
     color: var(--color-primary);
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle */
 .dark-theme .theme-toggle {
-    color: var(--color-text);
+    color: var(--color-text-secondary);
     border-color: var(--color-border);
-    background-color: var(--color-card-bg);
+    background: var(--color-surface);
 }
 
 .dark-theme .theme-toggle:hover {
-    background-color: rgba(var(--color-primary-rgb), 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
-/* Hero Section */
+/* Hero */
 .dark-theme .hero {
-    background-color: var(--color-secondary);
-    color: #fff;
+    background: var(--gradient-hero);
+}
+
+.dark-theme .hero::before {
+    background: var(--gradient-mesh);
+}
+
+.dark-theme .hero::after {
+    background: linear-gradient(to top, var(--color-background), transparent);
+}
+
+.dark-theme .hero .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
 }
 
 /* Cards */
-.dark-theme .card,
 .dark-theme .stat-card,
-.dark-theme .story-card {
-    background-color: var(--color-card-bg);
-    color: var(--color-text);
-    box-shadow: 0 2px 8px var(--color-shadow);
-    border: 1px solid var(--color-border);
+.dark-theme .story-card,
+.dark-theme .card {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-md);
+}
+
+.dark-theme .stat-card:hover,
+.dark-theme .story-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.dark-theme .stat-card h3 {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.dark-theme .story-image.placeholder {
+    background: linear-gradient(135deg, rgba(var(--color-accent-rgb), 0.08), rgba(var(--color-primary-rgb), 0.05));
 }
 
 /* Buttons */
-.dark-theme .btn {
-    border-color: var(--color-border);
-}
-
 .dark-theme .btn-primary {
-    background-color: var(--color-primary);
-    color: #fff;
+    background: var(--gradient-primary);
+    color: white;
 }
 
 .dark-theme .btn-secondary {
-    background-color: var(--color-secondary);
-    color: #fff;
+    background: var(--gradient-accent);
+    color: #0F172A;
 }
 
-.dark-theme .btn-primary:hover {
-    background-color: rgba(var(--color-primary-rgb), 0.8);
+.dark-theme .btn-outline {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
-.dark-theme .btn-secondary:hover {
-    background-color: rgba(var(--color-secondary-rgb), 0.8);
+.dark-theme .btn-outline:hover {
+    background: var(--color-primary);
+    color: white;
 }
 
 /* Footer */
 .dark-theme footer {
-    background-color: var(--color-footer-bg);
-    color: var(--color-text);
+    background: var(--color-footer-bg);
     border-top: 1px solid var(--color-border);
 }
 
-/* Map Styles */
+/* Map */
 .dark-theme .map-preview {
-    background-color: var(--color-background);
+    background: var(--color-background);
 }
 
 .dark-theme .home-map-container {
-    border: 1px solid var(--color-border);
+    border-color: var(--color-border);
+    background-color: #1a1a2e;
 }
 
-/* Leaflet Map Specific Styles */
+/* Leaflet dark mode */
 .dark-theme .leaflet-container {
-    background-color: #242424 !important;
+    background-color: #1a1a2e !important;
 }
 
 .dark-theme .leaflet-tile {
@@ -159,31 +213,29 @@
 }
 
 .dark-theme .leaflet-control-attribution {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    color: #ddd !important;
+    background-color: rgba(15, 23, 42, 0.8) !important;
+    color: #94A3B8 !important;
 }
 
 .dark-theme .leaflet-control-attribution a {
-    color: #bbb !important;
+    color: #64748B !important;
 }
 
 .dark-theme .leaflet-control-zoom a {
-    background-color: #333 !important;
-    color: #f0f0f0 !important;
-    border-color: #555 !important;
+    background-color: var(--color-surface) !important;
+    color: var(--color-text) !important;
+    border-color: var(--color-border) !important;
 }
 
 .dark-theme .leaflet-control-zoom a:hover {
-    background-color: #444 !important;
+    background-color: #334155 !important;
 }
 
-/* Ensure map container is visible */
 .dark-theme #map-container {
-    background-color: #242424 !important;
-    border: 1px solid #444 !important;
+    background-color: #1a1a2e !important;
+    border-color: var(--color-border) !important;
 }
 
-/* Fix for map tiles in dark mode */
 .dark-theme .leaflet-layer,
 .dark-theme .leaflet-control-zoom-in,
 .dark-theme .leaflet-control-zoom-out,
@@ -193,33 +245,25 @@
 
 /* Map Markers */
 .dark-theme .custom-marker {
-    border-color: #333;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    border-color: #334155;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .dark-theme .custom-marker div {
-    border-color: #333;
-}
-
-.dark-theme .custom-marker.in-progress div {
-    border-color: #333;
+    border-color: #334155;
 }
 
 /* Map Legend */
 .dark-theme .map-legend {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-}
-
-.dark-theme .legend-divider {
-    background-color: #444;
+    background: var(--color-surface);
+    border-color: var(--color-border);
 }
 
 /* Form Elements */
 .dark-theme input,
 .dark-theme textarea,
 .dark-theme select {
-    background-color: #2a2a2a;
+    background-color: var(--color-input-bg, #0F172A);
     color: var(--color-text);
     border: 1px solid var(--color-border);
 }
@@ -228,12 +272,12 @@
 .dark-theme textarea:focus,
 .dark-theme select:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.15);
 }
 
 .dark-theme input::placeholder,
 .dark-theme textarea::placeholder {
-    color: #777;
+    color: #475569;
 }
 
 /* Mobile Menu */
@@ -245,13 +289,58 @@
     background-color: var(--color-primary);
 }
 
-/* Story Cards */
-.dark-theme .story-image.placeholder {
-    background-color: #333;
+/* Mobile nav background */
+@media (max-width: 768px) {
+    .dark-theme .main-nav {
+        background: var(--color-surface);
+    }
+}
+
+/* User Menu */
+.dark-theme .user-menu-toggle {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+}
+
+.dark-theme .user-name {
+    color: var(--color-text);
+}
+
+.dark-theme .user-dropdown {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+}
+
+.dark-theme .user-dropdown li a {
+    color: var(--color-text-secondary);
+}
+
+.dark-theme .user-dropdown li a:hover {
+    color: var(--color-primary);
 }
 
 /* PWA Install Prompt */
 .dark-theme .pwa-install-prompt {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    border-color: var(--color-border);
+}
+
+/* Disabled fields */
+.dark-theme .disabled-field input,
+.dark-theme .disabled-field textarea,
+.dark-theme .disabled-field select {
+    background-color: var(--color-disabled) !important;
+    color: var(--color-disabled-text) !important;
+}
+
+/* Loading */
+.dark-theme .map-loading-indicator {
+    background: var(--color-surface);
+    color: var(--color-text);
+    box-shadow: var(--shadow-lg);
+}
+
+.dark-theme .map-loading-indicator .spinner {
+    border-color: var(--color-border);
+    border-top-color: var(--color-primary);
 }

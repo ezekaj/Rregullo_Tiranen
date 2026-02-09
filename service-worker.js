@@ -40,7 +40,7 @@ const ASSETS_TO_CACHE = [
   '/Rregullo_Tiranen/js/css-loader.js',
   '/Rregullo_Tiranen/js/pwa.js',
   '/Rregullo_Tiranen/manifest.json',
-  'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap',
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];
