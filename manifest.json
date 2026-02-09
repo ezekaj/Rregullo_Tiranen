@@ -2,7 +2,7 @@
   "name": "Rregullo Tiranen",
   "short_name": "Rregullo",
   "description": "Raportoni probleme urbane në Tiranë dhe ndihmoni në përmirësimin e qytetit",
-  "start_url": "/index.html",
+  "start_url": "/Rregullo_Tiranen/",
   "display": "standalone",
   "background_color": "#F8F8F8",
   "theme_color": "#C41E3A",
@@ -53,7 +53,11 @@
   "dir": "ltr",
   "prefer_related_applications": false,
   "related_applications": [],
-  "categories": ["utilities", "social", "productivity"],
+  "categories": [
+    "utilities",
+    "social",
+    "productivity"
+  ],
   "screenshots": [
     {
       "src": "images/screenshots/home-screen.png",
@@ -70,5 +74,6 @@
       "sizes": "1280x720",
       "type": "image/png"
     }
-  ]
+  ],
+  "scope": "/Rregullo_Tiranen/"
 }
